@@ -31,7 +31,7 @@ ABOUT
 AUTHORS
 
 	Gabriele Randelli        
-	Email: < randelli (--AT--) dis [--DOT--] uniroma1 [--DOT--] it >
+	Email: < gabrielerandelli (--AT--) gmail [--DOT--] com >
 
 
 LICENSE
@@ -107,12 +107,12 @@ PLATFORMS AND DEPENDENCIES
 
 DOWNLOAD
 	
-	WiiC is available at SourceForge (http://wiic.sf.net).
+	WiiC is available at GitHub (http://www.github.com).
 	In order to download, you can download the latest release
-	(http://www.sourceforge.net/projects/wiic/files), or you
-	can check it out via Subversion, typing:
+	(https://github.com/grandelli/WiiC/archive/master.zip), or you
+	can check it out via Git, typing:
 
-		svn co https://wiic.svn.sourceforge.net/svnroot/wiic <WIIC_HOME>
+		git clone https://github.com/grandelli/WiiC.git
 
 
 COMPILING

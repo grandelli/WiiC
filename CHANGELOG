@@ -1,0 +1,145 @@
+---------------------------
+-
+-  CHANGE LOG - WiiC
+-
+---------------------------
+
+http://wiic.sf.net
+
+
+---------------------------
+v1.2  --  
+---------------------------
+
+	Added:
+		-[Mac/Linux] Utility C++ method to enable/disable smoothing for accelerometers
+		-[Mac/Linux] wiic-logger now supports timed logging, without any button pressure (useful when you need the device to be still, as for calibration)
+		-[Mac/Linux] Added a new C++ method to find and connect to wiimote devices Wii::FindAndConnect()
+		-[Mac/Linux] New logging format and support for gyroscope logging		
+		-[Mac/Linux] New support for gyroscope logging 
+		-[Mac/Linux] Unlimited device search (in case timeout = 0)		
+ 
+	Changed:
+		-[Mac/Linux] Different smoothing algorithm, now directly applied to the raw acc values
+		-[Mac/Linux] Support for OpenCV 2.2
+
+	Fixed:
+		-[Mac/Linux] Fixed raw gravity vector computation
+
+---------------------------
+v1.1  --  17 Apr 2011
+---------------------------
+
+	Changed:
+		-[Mac/Linux] Changed pitch and roll computation
+		-[Mac/Linux] Changed the default smooth parameter for pitch and roll computation
+
+	Fixed:
+		-[Mac] Memory leak in Wiimote read
+
+---------------------------
+v1.00 --  11 Apr 2011
+---------------------------
+
+	Added:
+		-[Mac/Linux] Wiimote logging system
+		-[Mac/Linux] WiiC machine learning module
+
+---------------------------
+v0.53 -- 01 Sep 2010
+---------------------------
+
+	Added:
+		-[Mac/Linux] Wiimote registration system
+		-[Mac/Linux] WiiC configuration folder (.wiic)
+		-[Mac/Linux] New Wiimote loading function ("wiic_load" for C and "CWii::LoadRegisteredWiimotes()" for C++)
+
+---------------------------
+v0.51 -- 21 Aug 2010
+---------------------------
+
+	Added:
+		-[Mac/Linux] Motion Plus gyroscope threshold can be set by the user
+
+	Changed:
+		-[Mac/Linux] "wiiuse" prefix is not anymore used, everything starts with "wiic"
+		-[Mac/Linux] Usual optimizations
+
+---------------------------
+v0.50 -- 08 Jul 2010
+---------------------------
+
+	Added:
+		- [Mac/Linux] Full Balance Board support
+
+---------------------------
+v0.40 -- 17 May 2010
+---------------------------
+
+	Fixed:
+		- [Mac] Fix for IOBluetoothHostController 
+		- [Mac] wiiuse_poll is now non-blocking on Mac platforms too
+
+	Changed:
+		- [Linux/Mac] Removed old Windows stuff
+		- [Mac] Changed environment variable
+
+---------------------------
+v0.31 -- 25 Feb 2010
+---------------------------
+
+	Fixed:
+		- [Mac] Motion Plus bug
+		- [Mac] Now NSRunLoop is used instead of CFRunLoop
+		- [Mac] Pressing the power button on the Wiimote now works
+
+---------------------------
+v0.30 -- 19 Feb 2010
+---------------------------
+
+	Added:
+		- [Linux/Mac] WiiC now adopts CMake compiling system
+
+---------------------------
+v0.22 -- 09 Feb 2010
+---------------------------
+
+	Changed:
+		- No more Windows support
+
+	Added:
+		- [Linux/Mac] WiiC now embeds WiiuseCpp
+
+---------------------------
+v0.21 -- 13 Jan 2010
+---------------------------
+
+	Changed:
+		- [Linux/Mac/Win] New organization within header files 
+
+---------------------------
+v0.20 -- 11 Jan 2010
+---------------------------
+
+	Added:
+		- WiiC now supports Motion Plus (without supporting other extensions attached to it)
+
+---------------------------
+v0.14 -- 17 Dec 2009
+---------------------------
+
+	Fixed:
+		- [Linux/Mac/Win] Fixed a bug of Wiiuse about rumble
+		- [Linux/Mac/Win] Fixed a bug of Wiiuse in wiiuse_disconnect
+	
+	Changed:
+		- [Linux/Mac/Win] The rumble is managed only in wiiuse_send() and not
+				  anymore in other functions
+
+---------------------------
+v0.13 -- 14 Dec 2009
+---------------------------
+
+	Added:
+		- WiiC now supports Mac platforms
+

@@ -1,0 +1,185 @@
+---------------------------
+-
+-  README - WiiC
+-
+---------------------------
+
+Available from:
+http://wiic.sf.net
+
+---------------------------
+
+ABOUT
+
+	WiiC is a C/C++ library that extends the well known Wiiuse library, 
+	used to control several Nintendo Wii remotes, and its C++ wrapper
+	WiiuseCpp, all in a single library.
+	While Wiiuse supports Linux and Windows platforms, my aim was
+	to port it for Mac platforms, withdrawing the Windows support. 
+	WiiC fixes some Wiiuse minor bugs, and adds support to Motion Plus
+	and Balance Board.
+	WiiC also supports all the Wiiuse functionality, such as: 
+	motion sensing, IR tracking, nunchuk, classic controller, 
+	and the Guitar Hero 3 controller. 
+	WiiC can be integrated with OpenCV, in order to exploit its machine
+	learning algorithms for gesture recognition.
+	Single threaded and nonblocking makes a light weight and clean API.
+
+	Distributed under the GPL and LGPL.
+
+
+AUTHORS
+
+	Gabriele Randelli        
+	Email: < randelli (--AT--) dis [--DOT--] uniroma1 [--DOT--] it >
+
+
+LICENSE
+
+	There are two licenses for wiiC (same as wiiuse).  Please read them carefully before choosing which one
+	you use.  You may of course at any time switch the license you are currently using to
+	the other.
+
+	Briefly, the license options are:
+
+		a) GNU LGPL (modified for non-commercial usage only)
+		b) GNU GPL
+
+	PLEASE READ THE LICENSES!
+
+
+ACKNOWLEDGEMENTS
+
+	First of all, I would like to thank the RoCoCo Laboratory (http://labrococo.dis.uniroma1.it)
+	at the Department of Computer Science and Systems, Sapienza University of Rome, Italy.
+	Thanks to Luca, Daniele, Valentina, Angelo, and sorry to everyone I missed!
+
+	http://www.wiiuse.net/
+		A high-quality library for controlling Wii devices, which inspired my project.
+
+	http://wiibrew.org/
+		This site is a rich knowledge base that allowed me to understand lots of things
+		while porting Wiiuse to Mac.
+
+	http://www.missioncognition.net/wiiusecpp/
+		A C++ wrapper for Wiiuse, hence for WiiC as well, very useful for C++ developers.
+
+DISCLAIMER AND WARNINGS
+
+	I am in no way responsible for any damages or effects, intended or not, caused by this program.
+
+	*** WARNING *** WARNING *** WARNING ***
+
+	Be aware that writing to memory may damage or destroy your wiimote or expansions.
+
+	*** WARNING *** WARNING *** WARNING ***
+
+	This program was written using reverse engineered specifications available from wiibrew.org.
+	Therefore the operation of this program may not be entirely correct.
+	Results obtained by using this program may vary.
+
+
+AUDIENCE
+
+	This project is intended for developers who wish to include support for the Nintendo Wii remote
+	with their third party application.  Please be aware that by using this software you are bound
+	to the terms of the GNU GPL.
+
+
+PLATFORMS AND DEPENDENCIES
+
+	WiiC currently operates on Linux and Mac.
+	You will need:
+
+	For Linux:
+		- The kernel must support bluetooth
+		- The BlueZ bluetooth drivers must be installed
+		- CMake for compiling the library
+
+	For Mac:
+		- CMake for compiling the library
+		- Everything else is already present in the OS :)
+
+	Optional additional libraries:
+		- OpenCV, for machine learning support for gesture recognition
+		- Doxygen, if you want to generate the documentation
+
+
+DOWNLOAD
+	
+	WiiC is available at SourceForge (http://wiic.sf.net).
+	In order to download, you can download the latest release
+	(http://www.sourceforge.net/projects/wiic/files), or you
+	can check it out via Subversion, typing:
+
+		svn co https://wiic.svn.sourceforge.net/svnroot/wiic <WIIC_HOME>
+
+
+COMPILING
+
+	Linux:
+		Open a shell and type:
+
+			cd <WIIC_HOME>
+			mkdir build
+			cd build
+			cmake ../src
+			make
+		
+		Now, to install the libraries, become root, and type:
+
+			make install
+
+		The above command will only install the binaries that you
+		selected to compile.
+
+		libwiic.so is installed to /usr/local/lib
+		libwiicpp.so is installed to /usr/local/lib
+		libwiicml.so (optional) is installed to /usr/local/lib
+		wiic-example and wiicpp-example are installed to /usr/local/bin
+		Headers file are installed in /usr/local/include
+
+		If you want to generate documentation, then type:
+
+			make doc
+
+	Mac:
+		Open a shell and type:
+
+			cd <WIIC_HOME>
+			mkdir build
+			cd build
+			cmake ../src
+			make
+		
+		Now, to install the libraries, become root, and type:
+
+			make install
+
+		The above command will only install the binaries that you
+		selected to compile.
+
+		libwiic.dylib is installed to /usr/local/lib
+		libwiicpp.dylib is installed to /usr/local/lib
+		libwiicml.dylib (optional) is installed to /usr/local/lib
+		wiic-example and wiicpp-example are installed to /usr/local/bin
+		Headers file are installed in /usr/local/include
+
+		If you want to generate documentation, then type:
+
+			make doc
+
+
+USING THE LIBRARY IN A THIRD PARTY APPLICATION
+
+	To use the library in your own program you must first compile WiiC as a module.
+	Include wiic.h in any file that uses the WiiC C layer, or wiicpp.h in any C++ file.
+
+	For Linux you must link libwiic.so ( -lwiic ) for the C library, or libwiicpp.so ( -lwiicpp ) for the C++ library.
+	For Mac you must link libwiic.dylib ( -lwiic ) for the C library, or libwiicpp.dylib ( -lwiicpp ) for the C++ library.
+	In case you aim at exploiting WiiC machine learning techniques, link libwiicml.so (Linux) or libwiicml.dylib (Mac). 
+
+
+
+
+

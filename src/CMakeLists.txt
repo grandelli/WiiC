@@ -43,3 +43,11 @@ MAKE_DIRECTORY($ENV{HOME}/.wiic)
 SET(DOXYFILE_OUTPUT_DIR "${CMAKE_SOURCE_DIR}/../doc")
 include(UseDoxygen)
 
+# Uninstall Target
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+    IMMEDIATE @ONLY)
+
+add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+

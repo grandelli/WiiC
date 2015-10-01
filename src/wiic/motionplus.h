@@ -42,7 +42,7 @@
 extern "C" {
 #endif
 
-int motion_plus_handshake(struct wiimote_t* wm, byte* data, unsigned short len);
+void motion_plus_handshake(struct wiimote_t* wm, byte* data, unsigned short len);
 
 void motion_plus_disconnected(struct motion_plus_t* mp);
 

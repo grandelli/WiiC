@@ -55,6 +55,8 @@
 #include "classic.h"
 #include "guitar_hero_3.h"
 #include "events.h"
+#include "motionplus.h"
+#include "balanceboard.h"
 
 static void idle_cycle(struct wiimote_t* wm);
 void clear_dirty_reads(struct wiimote_t* wm);

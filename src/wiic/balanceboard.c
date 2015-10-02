@@ -25,6 +25,8 @@
  *	$Header$
  *
  */
+#include <stdlib.h>
+
 #include "balanceboard.h"
 #include "events.h"
 

@@ -31,6 +31,8 @@
  *	@brief Handles the Wiimote speakers.
  */
 //#pragma pack(nopack)
+#include <unistd.h>
+
 #include "wiic_internal.h"
 #include "speaker.h"
 

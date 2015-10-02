@@ -33,6 +33,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <unistd.h>
 
 #include "definitions.h"
 #include "wiic_internal.h"
@@ -138,7 +139,7 @@ void motion_plus_apply_smoothing(struct motion_plus_t *mp)
  *
  *	@return	Returns 1 if handshake was successful, 0 if not.
  */
-int motion_plus_handshake(struct wiimote_t* wm, byte* data, unsigned short len) 
+void motion_plus_handshake(struct wiimote_t* wm, byte* data, unsigned short len)
 {
 	WIIMOTE_DISABLE_STATE(wm, WIIMOTE_STATE_EXP);
 	WIIMOTE_DISABLE_STATE(wm, WIIMOTE_STATE_EXP_FAILED);
@@ -178,10 +179,7 @@ int motion_plus_handshake(struct wiimote_t* wm, byte* data, unsigned short len)
 	else {
 		WIIC_ERROR("Unable to activate Motion Plus");
 		wiic_set_motion_plus(wm,0);
-		return 0;
 	}
-	
-	return 1;
 }
 
 /**
